@@ -7,3 +7,13 @@ c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchi
 c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\obj\Debug\SanityArchive.csproj.GenerateResource.Cache
 c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\obj\Debug\SanityArchive.exe
 c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\obj\Debug\SanityArchive.pdb
+C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\bin\Debug\SanityArchive.exe.config
+C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.exe
+C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.pdb
+C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\bin\Debug\SanityArchive.exe
+C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\bin\Debug\SanityArchive.pdb
+C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.csprojResolveAssemblyReference.cache
+C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.Form1.resources
+C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.Properties.Resources.resources
+C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.csproj.GenerateResource.Cache
+C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.MainForm.resources
