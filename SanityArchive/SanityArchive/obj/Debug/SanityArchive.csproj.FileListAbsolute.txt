@@ -1,0 +1,9 @@
+c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\bin\Debug\SanityArchive.exe.config
+c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\bin\Debug\SanityArchive.exe
+c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\bin\Debug\SanityArchive.pdb
+c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\obj\Debug\SanityArchive.csprojResolveAssemblyReference.cache
+c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\obj\Debug\SanityArchive.Form1.resources
+c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\obj\Debug\SanityArchive.Properties.Resources.resources
+c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\obj\Debug\SanityArchive.csproj.GenerateResource.Cache
+c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\obj\Debug\SanityArchive.exe
+c:\users\orsolya\documents\visual studio 2015\Projects\SanityArchive\SanityArchive\obj\Debug\SanityArchive.pdb
