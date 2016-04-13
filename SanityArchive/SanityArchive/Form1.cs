@@ -13,6 +13,39 @@ namespace SanityArchive
 {
     public partial class Form1 : Form
     {
+        //public DriveInfo CurrentDrive { get; }
+        //public List<DriveInfo> AllDrives { get; }
+        public DirectoryInfo CurrentDirectory
+        {
+            get
+            {
+                return currentDirectory;
+            }
+        }
+
+        public FileSystemInfo SelectedFileOrDir
+        {
+            get
+            {
+                return selectedFileOrDir;
+            }
+        }
+
+        public List<FileSystemInfo> SelectedFilesAndDirs
+        {
+            get
+            {
+                return selectedFilesAndDirs;
+            }
+        }
+        public List<FileSystemInfo> AllFilesAndDirs
+        {
+            get
+            {
+                return selectedFilesAndDirs;
+            }
+        }
+
         public Form1()
         {
 
@@ -20,22 +53,70 @@ namespace SanityArchive
             
         }
 
+        private void EnterDirectory(DirectoryInfo dir)
+        {
+            DirectoryInfo[] dirs = dir.GetDirectories();
+            FileInfo[] files = dir.GetFiles();
+            FileSystemInfo[] filesAndDirs = new FileSystemInfo[dirs.Length + files.Length];
+            dirs.CopyTo(filesAndDirs, 0);
+            files.CopyTo(filesAndDirs, dirs.Length);
+            filesOnDrive.DataSource = filesAndDirs;
+            allFilesAndDirs = new List<FileSystemInfo>();
+            if (filesAndDirs.Length > 0)
+                allFilesAndDirs.AddRange(filesAndDirs.DefaultIfEmpty());
+            currentDirectory = dir;
+        }
+
+        private void ShowNothing()
+        {
+            filesOnDrive.DataSource = null;
+            currentDirectory = null;
+            selectedFileOrDir = null;
+            selectedFilesAndDirs = null;
+            allFilesAndDirs = null;
+        }
+
         private void textBox_Leave(object sender, EventArgs e)
         {
-
             string path = textBox.Text;
-            filesOnDrive.DataSource = Directory.GetFileSystemEntries(path);
+            if (path.Length.Equals(0))
+            {
+                ShowNothing();
+                return;
+            }
+            DirectoryInfo dir = new DirectoryInfo(path);
+            if (!dir.Exists)
+            {
+                ShowNothing();
+                MessageBox.Show("The directory you have specified does not exist!", "Directory Not Found");
+                return;
+            }
+            EnterDirectory(dir);
         }
 
         private void filesOnDrive_DoubleClick(object sender, EventArgs e)
         {
-            
-            string path = (string)filesOnDrive.SelectedItem;
-            if (new DirectoryInfo(path).Exists )
+
+            FileSystemInfo fileOrDir = (FileSystemInfo)filesOnDrive.SelectedItem;
+            if (fileOrDir is DirectoryInfo)
             {
-                filesOnDrive.DataSource = Directory.GetFileSystemEntries(path);
-                textBox.Text = path;
+                DirectoryInfo dir = (DirectoryInfo)fileOrDir;
+                EnterDirectory(dir);
+                textBox.Text = dir.FullName;
             }
         }
+
+        private void filesOnDrive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedFileOrDir = (FileSystemInfo)filesOnDrive.SelectedItem;
+            selectedFilesAndDirs = new List<FileSystemInfo>(filesOnDrive.SelectedItems.Cast<FileSystemInfo>());
+        }
+
+        //private DriveInfo currentDrive;
+        //private List<DriveInfo> allDrives;
+        private DirectoryInfo currentDirectory;
+        private FileSystemInfo selectedFileOrDir;
+        private List<FileSystemInfo> selectedFilesAndDirs;
+        private List<FileSystemInfo> allFilesAndDirs;
     }
 }

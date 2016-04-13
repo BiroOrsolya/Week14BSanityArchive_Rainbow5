@@ -41,6 +41,7 @@
             this.filesOnDrive.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.filesOnDrive.Size = new System.Drawing.Size(259, 238);
             this.filesOnDrive.TabIndex = 0;
+            this.filesOnDrive.SelectedIndexChanged += new System.EventHandler(this.filesOnDrive_SelectedIndexChanged);
             this.filesOnDrive.DoubleClick += new System.EventHandler(this.filesOnDrive_DoubleClick);
             // 
             // textBox
