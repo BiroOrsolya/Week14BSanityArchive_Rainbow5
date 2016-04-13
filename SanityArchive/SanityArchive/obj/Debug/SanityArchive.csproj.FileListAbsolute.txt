@@ -17,3 +17,4 @@ C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\Sa
 C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.Properties.Resources.resources
 C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.csproj.GenerateResource.Cache
 C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.MainForm.resources
+C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.DestinationDialog.resources

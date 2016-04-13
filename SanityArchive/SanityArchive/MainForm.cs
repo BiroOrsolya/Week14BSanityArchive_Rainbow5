@@ -16,5 +16,16 @@ namespace SanityArchive
         {
             InitializeComponent();
         }
+
+        private void compressButton_Click(object sender, EventArgs e)
+        {
+            DestinationDialog destinationForm = new DestinationDialog();
+            destinationForm.ShowDialog();
+            DialogResult result = destinationForm.DialogResult;
+            if (result.Equals(DialogResult.OK))
+            {
+                Console.Beep();
+            }
+        }
     }
 }

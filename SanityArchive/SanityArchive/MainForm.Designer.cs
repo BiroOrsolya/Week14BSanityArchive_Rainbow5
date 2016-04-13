@@ -62,6 +62,7 @@
             this.compressButton.TabIndex = 6;
             this.compressButton.Text = "Compress";
             this.compressButton.UseVisualStyleBackColor = true;
+            this.compressButton.Click += new System.EventHandler(this.compressButton_Click);
             // 
             // decompressButton
             // 
