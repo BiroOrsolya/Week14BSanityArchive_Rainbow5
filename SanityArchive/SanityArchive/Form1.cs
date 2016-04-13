@@ -48,12 +48,11 @@ namespace SanityArchive
 
         public Form1()
         {
-
             InitializeComponent();
-            
+            ShowNothing();
         }
 
-        private void EnterDirectory(DirectoryInfo dir)
+        virtual protected void EnterDirectory(DirectoryInfo dir)
         {
             DirectoryInfo[] dirs = dir.GetDirectories();
             FileInfo[] files = dir.GetFiles();
@@ -67,7 +66,7 @@ namespace SanityArchive
             currentDirectory = dir;
         }
 
-        private void ShowNothing()
+        virtual protected void ShowNothing()
         {
             filesOnDrive.DataSource = null;
             currentDirectory = null;
@@ -76,7 +75,7 @@ namespace SanityArchive
             allFilesAndDirs = null;
         }
 
-        private void textBox_Leave(object sender, EventArgs e)
+        virtual protected void textBox_Leave(object sender, EventArgs e)
         {
             string path = textBox.Text;
             if (path.Length.Equals(0))
@@ -94,7 +93,7 @@ namespace SanityArchive
             EnterDirectory(dir);
         }
 
-        private void filesOnDrive_DoubleClick(object sender, EventArgs e)
+        virtual protected void filesOnDrive_DoubleClick(object sender, EventArgs e)
         {
 
             FileSystemInfo fileOrDir = (FileSystemInfo)filesOnDrive.SelectedItem;
@@ -106,7 +105,7 @@ namespace SanityArchive
             }
         }
 
-        private void filesOnDrive_SelectedIndexChanged(object sender, EventArgs e)
+        virtual protected void filesOnDrive_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedFileOrDir = (FileSystemInfo)filesOnDrive.SelectedItem;
             selectedFilesAndDirs = new List<FileSystemInfo>(filesOnDrive.SelectedItems.Cast<FileSystemInfo>());

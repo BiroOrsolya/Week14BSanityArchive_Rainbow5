@@ -24,7 +24,7 @@ namespace SanityArchive
             DialogResult result = destinationForm.DialogResult;
             if (result.Equals(DialogResult.OK))
             {
-                Console.Beep();
+                
             }
         }
     }
