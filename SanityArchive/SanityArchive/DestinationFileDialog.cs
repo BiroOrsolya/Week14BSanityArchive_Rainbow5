@@ -39,9 +39,9 @@ namespace SanityArchive
         {
             if (fileNameBox.Text.Contains(Path.DirectorySeparatorChar.ToString()))
             {
-                MessageBox.Show("File name cannot contain character '" + Path.DirectorySeparatorChar.ToString() + "'!", "Directory-Separator in Filen Name");
+                MessageBox.Show("File name cannot contain character '" + Path.DirectorySeparatorChar + "'!", "Directory-Separator in Filen Name");
             }
-            destinationFile = new FileInfo(CurrentDirectory.FullName + fileNameBox.Text);
+            destinationFile = new FileInfo(CurrentDirectory.FullName + Path.DirectorySeparatorChar + fileNameBox.Text);
         }
 
         protected override void okButton_Click(object sender, EventArgs e)
