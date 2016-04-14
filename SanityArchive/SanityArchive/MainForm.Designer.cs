@@ -44,6 +44,7 @@
             this.copyButton.TabIndex = 4;
             this.copyButton.Text = "Copy";
             this.copyButton.UseVisualStyleBackColor = true;
+            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
             // 
             // moveButton
             // 
@@ -53,6 +54,7 @@
             this.moveButton.TabIndex = 5;
             this.moveButton.Text = "Move";
             this.moveButton.UseVisualStyleBackColor = true;
+            this.moveButton.Click += new System.EventHandler(this.moveButton_Click);
             // 
             // compressButton
             // 

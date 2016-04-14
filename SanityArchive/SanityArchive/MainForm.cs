@@ -44,5 +44,15 @@ namespace SanityArchive
             fsInput.Read(bytearrayinput, 0, bytearrayinput.Length);
             crStream.Write(bytearrayinput, 0, bytearrayinput.Length);
         }
+
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            CopyButton_Click(sender, e);
+        }
+
+        private void moveButton_Click(object sender, EventArgs e)
+        {
+            MoveButton_Click(sender, e);
+        }
     }
 }
