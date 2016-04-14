@@ -14,10 +14,10 @@ namespace SanityArchive
         protected override void EnterDirectory(DirectoryInfo dir)
         {
             FileSystemInfo[] dirs = dir.GetDirectories();
-            allFilesAndDirs = new List<FileSystemInfo>();
+            AllFilesAndDirs = new List<FileSystemInfo>();
             if (dirs.Length > 0)
-                allFilesAndDirs.AddRange(dirs);
-            currentDirectory = dir;
+                AllFilesAndDirs.AddRange(dirs);
+            CurrentDirectory = dir;
         }
     }
 }
