@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -12,38 +13,28 @@ namespace SanityArchive
         {
             InitializeComponent();
         }
+        
+        
 
-        private void compressButton_Click(object sender, EventArgs e)
+        private void encryptButton_Click(object sender, EventArgs e)
         {
-            DestinationDialog destinationForm = new DestinationDialog();
-            destinationForm.ShowDialog();
-            DialogResult result = destinationForm.DialogResult;
-            if (result.Equals(DialogResult.OK)) { }
+            string[] fileList = { "C:/GDrive/fixip.jpg", "C:/GDrive/train.wav" };
+            string ec = fileList[0].Substring(0, fileList[0].Length - 3) + "ec";
+            string sKey = "12345678";
+
+            FileStream fsInput = new FileStream(fileList[0], FileMode.Open, FileAccess.Read);
+            FileStream fsEncrypted = new FileStream(ec, FileMode.Create, FileAccess.Write);
+
+            DESCryptoServiceProvider DES = new DESCryptoServiceProvider();
+            DES.Key = Encoding.ASCII.GetBytes(sKey);
+            DES.IV = Encoding.ASCII.GetBytes(sKey);
+
+            ICryptoTransform transform = DES.CreateEncryptor();
+            CryptoStream crStream = new CryptoStream(fsEncrypted, transform, CryptoStreamMode.Write);
+
+            byte[] bytearrayinput = new byte[fsInput.Length - 1];
+            fsInput.Read(bytearrayinput, 0, bytearrayinput.Length);
+            crStream.Write(bytearrayinput, 0, bytearrayinput.Length);
         }
-
-		private void encryptButton_Click (object sender, EventArgs e) {
-			string ec = textBox.Text + @"\" + filesOnDrive.SelectedItems[0].ToString().Substring(0, filesOnDrive.SelectedItems[0].ToString().Length - 3) + "enc";
-			string sKey = "dontknow";
-
-			FileStream fsInput = new FileStream(textBox.Text + @"\" + filesOnDrive.SelectedItems[0], FileMode.Open, FileAccess.Read);
-			FileStream fsEncrypted = new FileStream(ec, FileMode.Create, FileAccess.Write);
-
-			DESCryptoServiceProvider DES = new DESCryptoServiceProvider();
-			DES.Key = Encoding.ASCII.GetBytes(sKey);
-			DES.IV = Encoding.ASCII.GetBytes(sKey);
-
-			ICryptoTransform transform = DES.CreateEncryptor();
-			CryptoStream crStream = new CryptoStream(fsEncrypted, transform, CryptoStreamMode.Write);
-
-			byte[] bytearrayinput = new byte[fsInput.Length - 1];
-			fsInput.Read(bytearrayinput, 0, bytearrayinput.Length);
-			crStream.Write(bytearrayinput, 0, bytearrayinput.Length);
-
-			crStream.Close();
-			fsEncrypted.Close();
-			fsInput.Close();
-			File.Delete(filesOnDrive.SelectedItems[0].ToString());
-			MessageBox.Show(@"The selected file(s) were encrypted successfully\n" + filesOnDrive.SelectedItems[0]);
-		}
-	}
+    }
 }
