@@ -13,8 +13,16 @@ namespace SanityArchive
         {
             InitializeComponent();
         }
-        
-        
+
+        private void compressButton_Click(object sender, EventArgs e)
+        {
+            CompressButton_Click(sender, e);
+        }
+
+        private void decompressButton_Click(object sender, EventArgs e)
+        {
+            DecompressButton_Click(sender, e);
+        }
 
         private void encryptButton_Click(object sender, EventArgs e)
         {

@@ -8,7 +8,7 @@ namespace SanityArchive
 {
     partial class MainForm
     {
-        private void compressOne(FileSystemInfo src, FileInfo dest)
+        private void CompressOne(FileSystemInfo src, FileInfo dest)
         {
             using (ZipArchive destArchiveObj = ZipFile.Open(dest.FullName, ZipArchiveMode.Update))
             {
@@ -16,7 +16,7 @@ namespace SanityArchive
             }
         }
 
-        private void compressMany(List<FileSystemInfo> src, FileInfo dest)
+        private void CompressMany(List<FileSystemInfo> src, FileInfo dest)
         {
             foreach (FileSystemInfo currentSourceFile in src)
             {
@@ -27,20 +27,43 @@ namespace SanityArchive
             }
         }
 
-        private void compressDirectory(DirectoryInfo src, FileInfo dest)
+        private void CompressDirectory(DirectoryInfo src, FileInfo dest)
         {
             ZipFile.CreateFromDirectory(src.FullName, dest.FullName);
         }
 
-        private void compressButton_Click(object sender, EventArgs e)
+        private void DecompressOne(ZipArchiveEntry src, DirectoryInfo dest)
+        {
+            src.ExtractToFile(dest.FullName + Path.DirectorySeparatorChar + src.FullName);
+        }
+
+        private void DecompressMany(List<ZipArchiveEntry> src, DirectoryInfo dest)
+        {
+            foreach (ZipArchiveEntry currentSourceArchiveEntry in src)
+            {
+                currentSourceArchiveEntry.ExtractToFile(dest.FullName + Path.DirectorySeparatorChar + currentSourceArchiveEntry.FullName);
+            }
+        }
+
+        private void DecompressArchive(FileInfo src, DirectoryInfo dest)
+        {
+            ZipFile.ExtractToDirectory(src.FullName, dest.FullName);
+        }
+
+        private void CompressButton_Click(object sender, EventArgs e)
         {
             DestinationFileDialog destinationForm = new DestinationFileDialog();
             destinationForm.ShowDialog();
             DialogResult result = destinationForm.DialogResult;
             if (result.Equals(DialogResult.OK))
             {
-                compressMany(SelectedFilesAndDirs, destinationForm.DestinationFile);
+                CompressMany(SelectedFilesAndDirs, destinationForm.DestinationFile);
             }
+        }
+
+        private void DecompressButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
