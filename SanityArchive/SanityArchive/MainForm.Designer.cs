@@ -62,6 +62,7 @@
 			this.compressButton.TabIndex = 6;
 			this.compressButton.Text = "Compress";
 			this.compressButton.UseVisualStyleBackColor = true;
+			this.compressButton.Click += new System.EventHandler(this.compressButton_Click);
 			// 
 			// decompressButton
 			// 
@@ -80,7 +81,7 @@
 			this.encriptButton.TabIndex = 8;
 			this.encriptButton.Text = "Encript";
 			this.encriptButton.UseVisualStyleBackColor = true;
-			this.encriptButton.Click += new System.EventHandler(this.EncryptButton);
+			this.encriptButton.Click += new System.EventHandler(this.encryptButton_Click);
 			// 
 			// decriptButton
 			// 

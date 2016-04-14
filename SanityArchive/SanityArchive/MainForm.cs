@@ -1,31 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
-namespace SanityArchive {
-    public partial class MainForm : Form1 {
+namespace SanityArchive
+{
+    public partial class MainForm : Form1
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void compressButton_Click(object sender, EventArgs e)
+        {
+            DestinationDialog destinationForm = new DestinationDialog();
+            destinationForm.ShowDialog();
+            DialogResult result = destinationForm.DialogResult;
+            if (result.Equals(DialogResult.OK)) { }
+        }
+
+		private void encryptButton_Click (object sender, EventArgs e) {
+			string[] fileList = {"C:/GDrive/fixip.jpg", "C:/GDrive/train.wav"};
+			string ec = fileList[0].Substring(0, fileList[0].Length - 3) + "ec";
+			string sKey = "12345678";
+
+			FileStream fsInput = new FileStream(fileList[0], FileMode.Open, FileAccess.Read);
+			FileStream fsEncrypted = new FileStream(ec, FileMode.Create, FileAccess.Write);
+
+			DESCryptoServiceProvider DES = new DESCryptoServiceProvider();
+			DES.Key = Encoding.ASCII.GetBytes(sKey);
+			DES.IV = Encoding.ASCII.GetBytes(sKey);
+
+			ICryptoTransform transform = DES.CreateEncryptor();
+			CryptoStream crStream = new CryptoStream(fsEncrypted, transform, CryptoStreamMode.Write);
+
+			byte[] bytearrayinput = new byte[fsInput.Length - 1];
+			fsInput.Read(bytearrayinput, 0, bytearrayinput.Length);
+			crStream.Write(bytearrayinput, 0, bytearrayinput.Length);
 
 
-        public MainForm() { InitializeComponent(); }
-
-		private void EncryptButton (object sender, EventArgs e) {
-			List<FileInfo> selectedFiles = new List<FileInfo>();
-			selectedFiles.Add(new FileInfo("C:/GDrive/fixip.jpg"));
-	        MessageBox.Show(selectedFiles[0].ToString());
-
-			Stream stream = new FileStream("C:/GDrive/fixip.jpg", FileMode.Create);
-			Rijndael rijAlg = Rijndael.Create();
-
-			rijAlg.Key = Key;
-                rijAlg.IV = IV;
-
-                // Create a decryptor to perform the stream transform.
-                ICryptoTransform decryptor = rijAlg.CreateDecryptor(rijAlg.Key, rijAlg.IV);
-			CryptoStream crStream = new CryptoStream(stream, );
 		}
-
-	    public byte[] Key { get; set; }
-    }
+	}
 }
