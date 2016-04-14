@@ -17,7 +17,7 @@ namespace SanityArchive
 
         private void compressButton_Click(object sender, EventArgs e)
         {
-            DestinationDialog destinationForm = new DestinationDialog();
+            DestinationFileDialog destinationForm = new DestinationFileDialog();
             destinationForm.ShowDialog();
             DialogResult result = destinationForm.DialogResult;
             if (result.Equals(DialogResult.OK))

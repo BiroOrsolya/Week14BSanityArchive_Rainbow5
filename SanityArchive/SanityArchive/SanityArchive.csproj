@@ -53,6 +53,12 @@
     <Compile Include="DestinationDialog.Designer.cs">
       <DependentUpon>DestinationDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="DestinationFileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DestinationFileDialog.Designer.cs">
+      <DependentUpon>DestinationFileDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DestinationDialog.resx">
       <DependentUpon>DestinationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DestinationFileDialog.resx">
+      <DependentUpon>DestinationFileDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
