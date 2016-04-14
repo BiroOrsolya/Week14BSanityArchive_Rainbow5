@@ -21,7 +21,6 @@ C:\dev\C#\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\Sa
 C:\Users\Szikora Atilla\Source\Repos\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\bin\Debug\SanityArchive.exe.config
 C:\Users\Szikora Atilla\Source\Repos\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\bin\Debug\SanityArchive.exe
 C:\Users\Szikora Atilla\Source\Repos\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\bin\Debug\SanityArchive.pdb
-C:\Users\Szikora Atilla\Source\Repos\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.csprojResolveAssemblyReference.cache
 C:\Users\Szikora Atilla\Source\Repos\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.DestinationDialog.resources
 C:\Users\Szikora Atilla\Source\Repos\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.Form1.resources
 C:\Users\Szikora Atilla\Source\Repos\Week14BSanityArchive_Rainbow5\SanityArchive\SanityArchive\obj\Debug\SanityArchive.MainForm.resources

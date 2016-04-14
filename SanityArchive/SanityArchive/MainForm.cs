@@ -22,11 +22,10 @@ namespace SanityArchive
         }
 
 		private void encryptButton_Click (object sender, EventArgs e) {
-			string[] fileList = {"C:/GDrive/fixip.jpg", "C:/GDrive/train.wav"};
-			string ec = fileList[0].Substring(0, fileList[0].Length - 3) + "ec";
-			string sKey = "12345678";
+			string ec = textBox.Text + @"\" + filesOnDrive.SelectedItems[0].ToString().Substring(0, filesOnDrive.SelectedItems[0].ToString().Length - 3) + "enc";
+			string sKey = "dontknow";
 
-			FileStream fsInput = new FileStream(fileList[0], FileMode.Open, FileAccess.Read);
+			FileStream fsInput = new FileStream(textBox.Text + @"\" + filesOnDrive.SelectedItems[0], FileMode.Open, FileAccess.Read);
 			FileStream fsEncrypted = new FileStream(ec, FileMode.Create, FileAccess.Write);
 
 			DESCryptoServiceProvider DES = new DESCryptoServiceProvider();
@@ -40,7 +39,11 @@ namespace SanityArchive
 			fsInput.Read(bytearrayinput, 0, bytearrayinput.Length);
 			crStream.Write(bytearrayinput, 0, bytearrayinput.Length);
 
-
+			crStream.Close();
+			fsEncrypted.Close();
+			fsInput.Close();
+			File.Delete(filesOnDrive.SelectedItems[0].ToString());
+			MessageBox.Show(@"The selected file(s) were encrypted successfully\n" + filesOnDrive.SelectedItems[0]);
 		}
 	}
 }
