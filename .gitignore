@@ -308,5 +308,5 @@ paket-files/
 # ==================
 
 # what I've added manually cause it did not work
-SanityArchive\SanityArchive\bin\Debug\
-SanityArchive\SanityArchive\obj\Debug\
+/SanityArchive/SanityArchive/obj/Debug/
+/SanityArchive/SanityArchive/bin/Debug/
