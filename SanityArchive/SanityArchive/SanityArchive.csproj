@@ -54,6 +54,12 @@
     <Compile Include="DestinationDialog.Designer.cs">
       <DependentUpon>DestinationDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="DestinationDirectoryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DestinationDirectoryDialog.Designer.cs">
+      <DependentUpon>DestinationDirectoryDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="DestinationFileDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.Compressing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.CopyMove.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.cs">

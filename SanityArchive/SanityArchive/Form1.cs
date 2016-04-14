@@ -1,50 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SanityArchive
 {
     public partial class Form1 : Form
     {
-        //public DriveInfo CurrentDrive { get; }
-        //public List<DriveInfo> AllDrives { get; }
-        public DirectoryInfo CurrentDirectory
-        {
-            get
-            {
-                return currentDirectory;
-            }
-        }
+        //public DriveInfo CurrentDrive { get; protected set; }
+        //public List<DriveInfo> AllDrives { get; protected set; }
+        public DirectoryInfo CurrentDirectory { get; protected set; }
+        public FileSystemInfo SelectedFileOrDir { get; protected set; }
 
-        public FileSystemInfo SelectedFileOrDir
-        {
-            get
-            {
-                return selectedFileOrDir;
-            }
-        }
-
-        public List<FileSystemInfo> SelectedFilesAndDirs
-        {
-            get
-            {
-                return selectedFilesAndDirs;
-            }
-        }
-        public List<FileSystemInfo> AllFilesAndDirs
-        {
-            get
-            {
-                return selectedFilesAndDirs;
-            }
-        }
+        public List<FileSystemInfo> SelectedFilesAndDirs { get; protected set; }
+        public List<FileSystemInfo> AllFilesAndDirs { get; protected set; }
 
         public Form1()
         {
@@ -60,19 +31,19 @@ namespace SanityArchive
             dirs.CopyTo(filesAndDirs, 0);
             files.CopyTo(filesAndDirs, dirs.Length);
             filesOnDrive.DataSource = filesAndDirs;
-            allFilesAndDirs = new List<FileSystemInfo>();
+            AllFilesAndDirs = new List<FileSystemInfo>();
             if (filesAndDirs.Length > 0)
-                allFilesAndDirs.AddRange(filesAndDirs.DefaultIfEmpty());
-            currentDirectory = dir;
+                AllFilesAndDirs.AddRange(filesAndDirs.DefaultIfEmpty());
+            CurrentDirectory = dir;
         }
 
         virtual protected void ShowNothing()
         {
             filesOnDrive.DataSource = null;
-            currentDirectory = null;
-            selectedFileOrDir = null;
-            selectedFilesAndDirs = null;
-            allFilesAndDirs = null;
+            CurrentDirectory = null;
+            SelectedFileOrDir = null;
+            SelectedFilesAndDirs = null;
+            AllFilesAndDirs = null;
         }
 
         virtual protected void textBox_Leave(object sender, EventArgs e)
@@ -107,15 +78,8 @@ namespace SanityArchive
 
         virtual protected void filesOnDrive_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedFileOrDir = (FileSystemInfo)filesOnDrive.SelectedItem;
-            selectedFilesAndDirs = new List<FileSystemInfo>(filesOnDrive.SelectedItems.Cast<FileSystemInfo>());
+            SelectedFileOrDir = (FileSystemInfo)filesOnDrive.SelectedItem;
+            SelectedFilesAndDirs = new List<FileSystemInfo>(filesOnDrive.SelectedItems.Cast<FileSystemInfo>());
         }
-
-        //private DriveInfo currentDrive;
-        //private List<DriveInfo> allDrives;
-        private DirectoryInfo currentDirectory;
-        private FileSystemInfo selectedFileOrDir;
-        private List<FileSystemInfo> selectedFilesAndDirs;
-        private List<FileSystemInfo> allFilesAndDirs;
     }
 }

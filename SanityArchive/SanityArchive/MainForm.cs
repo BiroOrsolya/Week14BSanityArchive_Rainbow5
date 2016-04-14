@@ -13,8 +13,16 @@ namespace SanityArchive
         {
             InitializeComponent();
         }
-        
-        
+
+        private void compressButton_Click(object sender, EventArgs e)
+        {
+            CompressButton_Click(sender, e);
+        }
+
+        private void decompressButton_Click(object sender, EventArgs e)
+        {
+            DecompressButton_Click(sender, e);
+        }
 
         private void encryptButton_Click(object sender, EventArgs e)
         {
@@ -35,6 +43,16 @@ namespace SanityArchive
             byte[] bytearrayinput = new byte[fsInput.Length - 1];
             fsInput.Read(bytearrayinput, 0, bytearrayinput.Length);
             crStream.Write(bytearrayinput, 0, bytearrayinput.Length);
+        }
+
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            CopyButton_Click(sender, e);
+        }
+
+        private void moveButton_Click(object sender, EventArgs e)
+        {
+            MoveButton_Click(sender, e);
         }
     }
 }
