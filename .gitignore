@@ -304,3 +304,9 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# ==================
+
+# what I've added manually cause it did not work
+SanityArchive\SanityArchive\bin\Debug\
+SanityArchive\SanityArchive\obj\Debug\
