@@ -63,7 +63,20 @@ namespace SanityArchive
 
         private void DecompressButton_Click(object sender, EventArgs e)
         {
-            
+            if (!(SelectedFileOrDir is FileInfo))
+            {
+                MessageBox.Show("The source you specified is not a file!", "Source Is No File");
+            }
+            else
+            {
+                FileInfo sourceFile = (FileInfo)SelectedFileOrDir;
+                DestinationDirectoryDialog destinationDialog = new DestinationDirectoryDialog();
+                destinationDialog.ShowDialog();
+                if (destinationDialog.DialogResult.Equals(DialogResult.OK))
+                {
+                    DecompressArchive(sourceFile, destinationDialog.CurrentDirectory);
+                }
+            }
         }
     }
 }

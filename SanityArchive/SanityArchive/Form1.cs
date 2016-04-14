@@ -113,9 +113,9 @@ namespace SanityArchive
 
         //private DriveInfo currentDrive;
         //private List<DriveInfo> allDrives;
-        private DirectoryInfo currentDirectory;
-        private FileSystemInfo selectedFileOrDir;
-        private List<FileSystemInfo> selectedFilesAndDirs;
-        private List<FileSystemInfo> allFilesAndDirs;
+        protected DirectoryInfo currentDirectory;
+        protected FileSystemInfo selectedFileOrDir;
+        protected List<FileSystemInfo> selectedFilesAndDirs;
+        protected List<FileSystemInfo> allFilesAndDirs;
     }
 }
