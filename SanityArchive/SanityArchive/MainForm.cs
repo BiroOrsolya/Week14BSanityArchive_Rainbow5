@@ -45,9 +45,6 @@ namespace SanityArchive
             byte[] bytearrayinput = new byte[fsInput.Length - 1];
             fsInput.Read(bytearrayinput, 0, bytearrayinput.Length);
             crStream.Write(bytearrayinput, 0, bytearrayinput.Length);
-
-
-
         }
     }
 }

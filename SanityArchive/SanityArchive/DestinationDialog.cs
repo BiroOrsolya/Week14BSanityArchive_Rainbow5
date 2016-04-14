@@ -12,13 +12,13 @@ namespace SanityArchive
             InitializeComponent();
         }
         
-        private void okButton_Click(object sender, EventArgs e)
+        virtual protected void okButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
             Close();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        virtual protected void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
