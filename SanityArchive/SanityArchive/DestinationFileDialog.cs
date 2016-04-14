@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -7,13 +7,7 @@ namespace SanityArchive
 {
     public partial class DestinationFileDialog : DestinationDialog
     {
-        public FileInfo DestinationFile
-        {
-            get
-            {
-                return destinationFile;
-            }
-        }
+        public FileInfo DestinationFile { get; protected set; }
 
         public DestinationFileDialog()
         {
@@ -25,12 +19,12 @@ namespace SanityArchive
             base.filesOnDrive_SelectedIndexChanged(sender, e);
             if (SelectedFileOrDir is FileInfo)
             {
-                destinationFile = (FileInfo)SelectedFileOrDir;
-                fileNameBox.Text = destinationFile.Name;
+                DestinationFile = (FileInfo)SelectedFileOrDir;
+                fileNameBox.Text = DestinationFile.Name;
             }
             else
             {
-                destinationFile = null;
+                DestinationFile = null;
                 fileNameBox.Text = "";
             }
         }
@@ -41,19 +35,17 @@ namespace SanityArchive
             {
                 MessageBox.Show("File name cannot contain character '" + Path.DirectorySeparatorChar + "'!", "Directory-Separator in Filen Name");
             }
-            destinationFile = new FileInfo(CurrentDirectory.FullName + Path.DirectorySeparatorChar + fileNameBox.Text);
+            DestinationFile = new FileInfo(CurrentDirectory.FullName + Path.DirectorySeparatorChar + fileNameBox.Text);
         }
 
         protected override void okButton_Click(object sender, EventArgs e)
         {
-            if (destinationFile == null)
+            if (DestinationFile == null)
             {
                 MessageBox.Show("You have to specify a file to click OK!", "No File Specified");
                 return;
             }
             base.okButton_Click(sender, e);
         }
-
-        private FileInfo destinationFile;
     }
 }
