@@ -29,7 +29,7 @@ namespace SanityArchive
             }
         }
 
-        private void fileNameBox_Leave(object sender, EventArgs e)
+        protected virtual void fileNameBox_Leave(object sender, EventArgs e)
         {
             if (fileNameBox.Text.Contains(Path.DirectorySeparatorChar.ToString()))
             {

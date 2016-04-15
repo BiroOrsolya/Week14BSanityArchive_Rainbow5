@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace SanityArchive
 {
-    public partial class MainForm : Form1
+    public sealed partial class MainForm : Form1
     {
         public MainForm()
         {
@@ -14,12 +14,12 @@ namespace SanityArchive
 
         private void compressButton_Click(object sender, EventArgs e)
         {
-            CompressButton_Click(sender, e);
+            OnCompressClick(sender, e);
         }
 
-        private void decompressButton_Click(object sender, EventArgs e)
+        private void extractButton_Click(object sender, EventArgs e)
         {
-            DecompressButton_Click(sender, e);
+            OnExtractClick(sender, e);
         }
 
         private void encryptButton_Click(object sender, EventArgs e)

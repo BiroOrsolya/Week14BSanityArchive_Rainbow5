@@ -58,6 +58,8 @@
             this.Controls.Add(this.fileNameBox);
             this.Name = "DestinationFileDialog";
             this.Text = "DestinationFileDialog";
+            this.Controls.SetChildIndex(this.filesOnDrive, 0);
+            this.Controls.SetChildIndex(this.textBox, 0);
             this.Controls.SetChildIndex(this.fileNameBox, 0);
             this.Controls.SetChildIndex(this.fileNameLabel, 0);
             this.ResumeLayout(false);
@@ -66,8 +68,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox fileNameBox;
         private System.Windows.Forms.Label fileNameLabel;
+        protected System.Windows.Forms.TextBox fileNameBox;
     }
 }

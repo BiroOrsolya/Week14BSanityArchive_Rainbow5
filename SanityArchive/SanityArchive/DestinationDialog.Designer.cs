@@ -61,6 +61,8 @@
             this.Controls.Add(this.okButton);
             this.Name = "DestinationDialog";
             this.Text = "DestinationDialog";
+            this.Controls.SetChildIndex(this.filesOnDrive, 0);
+            this.Controls.SetChildIndex(this.textBox, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.ResumeLayout(false);
@@ -70,7 +72,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        protected System.Windows.Forms.Button okButton;
+        protected System.Windows.Forms.Button cancelButton;
     }
 }

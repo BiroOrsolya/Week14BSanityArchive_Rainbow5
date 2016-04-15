@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalcSpace.cs" />
+    <Compile Include="Compressor.cs" />
     <Compile Include="Copyer.cs" />
     <Compile Include="DestinationDialog.cs">
       <SubType>Form</SubType>
