@@ -19,10 +19,18 @@ namespace SanityArchive
             }
             else
             {
-
-                foreach (var fil in files)
+                List<string> path = new List<string>();
+                foreach (var item in files)
                 {
-                    string file = sourceDir + Path.DirectorySeparatorChar + fil.Name;
+                    string it = sourceDir + Path.DirectorySeparatorChar + item.Name;
+                    path.Add(it);
+                }
+                
+
+
+                foreach (var file in path)
+                {
+                    
                     if (File.Exists(file))
                     {
                         CopyFile(file, sourceDir, targetDir);
