@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace FileOrDirectoryChecker {
+namespace SanityArchive {
     class CalcSpace {
         
         public static long CalculateSizeOfFiles(string dirPath, IEnumerable<FileSystemInfo> paths)
@@ -10,7 +10,7 @@ namespace FileOrDirectoryChecker {
             long sumSize = 0;
             foreach (var path in paths)
             {
-	            string pathName = dirPath + @"\" + path.Name;
+	            string pathName = dirPath + path.Name;
                 if (File.Exists(pathName))
                 {
                     sumSize += CalculateFileSize(pathName);

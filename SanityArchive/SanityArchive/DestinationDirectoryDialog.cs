@@ -14,6 +14,7 @@ namespace SanityArchive
         protected override void EnterDirectory(DirectoryInfo dir)
         {
             FileSystemInfo[] dirs = dir.GetDirectories();
+            filesOnDrive.DataSource = dirs;
             AllFilesAndDirs = new List<FileSystemInfo>();
             if (dirs.Length > 0)
                 AllFilesAndDirs.AddRange(dirs);

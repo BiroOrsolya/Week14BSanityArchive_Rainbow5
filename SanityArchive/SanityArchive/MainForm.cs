@@ -2,7 +2,6 @@
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using FileOrDirectoryChecker;
 
 namespace SanityArchive
 {
@@ -47,7 +46,7 @@ namespace SanityArchive
 		private void calcSpaceButton_Click (object sender, EventArgs e)
 		{
 	        var selectedFiles = filesOnDrive.SelectedItems.OfType<FileSystemInfo>().ToList();
-			MessageBox.Show(CalcSpace.CalculateSizeOfFiles(textBox.Text, selectedFiles) + " bytes");
+			MessageBox.Show(CalcSpace.CalculateSizeOfFiles(textBox.Text  + Path.DirectorySeparatorChar, selectedFiles) + " bytes");
 		}
 	}
 }
