@@ -78,8 +78,8 @@
 
         #endregion
         private System.Windows.Forms.Label path_lb;
-		protected System.Windows.Forms.ListBox filesOnDrive;
-		public System.Windows.Forms.TextBox textBox;
+		protected static System.Windows.Forms.ListBox filesOnDrive;
+		public static System.Windows.Forms.TextBox textBox;
 	}
 }
 
