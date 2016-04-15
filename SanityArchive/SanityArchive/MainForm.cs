@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 
 namespace SanityArchive
 {
@@ -19,11 +21,16 @@ namespace SanityArchive
             DecompressButton_Click(sender, e);
         }
 
-        private void encryptButton_Click(object sender, EventArgs e) {
-            Encrypting.Encrypt(); }
+        private void encryptButton_Click(object sender, EventArgs e)
+        {
+	        var selectedFiles = filesOnDrive.SelectedItems.OfType<FileSystemInfo>().ToList();
+	        Encrypting.Encrypt(textBox.Text, selectedFiles);
+        }
 
 		private void decryptButton_Click (object sender, EventArgs e) {
-			Encrypting.Decrypt(); }
+	        var selectedFiles = filesOnDrive.SelectedItems.OfType<FileSystemInfo>().ToList();
+			Encrypting.Decrypt(textBox.Text, selectedFiles);
+		}
 
         private void copyButton_Click(object sender, EventArgs e)
         {
