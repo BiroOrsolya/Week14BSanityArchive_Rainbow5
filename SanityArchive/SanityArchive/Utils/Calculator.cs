@@ -5,10 +5,10 @@ using System.IO;
 namespace SanityArchive {
     namespace Utils
     {
-        class Calculator
+        internal class Calculator
         {
 
-            public static long CalculateSizeOfFiles(string dirPath, IEnumerable<FileSystemInfo> paths)
+            internal static long CalculateSizeOfFiles(string dirPath, IEnumerable<FileSystemInfo> paths)
             {
                 long sumSize = 0;
                 foreach (var path in paths)
@@ -30,13 +30,13 @@ namespace SanityArchive {
                 return sumSize;
 
             }
-            public static long CalculateFileSize(string path)
+            internal static long CalculateFileSize(string path)
             {
                 FileInfo file = new FileInfo(path);
                 return file.Length;
 
             }
-            public static long CalculateDirectorySize(string directory)
+            internal static long CalculateDirectorySize(string directory)
             {
                 long sumSize = 0;
                 string[] files = Directory.GetFiles(directory);

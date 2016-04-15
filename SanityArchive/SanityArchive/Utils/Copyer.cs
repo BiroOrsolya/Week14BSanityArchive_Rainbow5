@@ -6,9 +6,9 @@ namespace SanityArchive
 {
     namespace Utils
     {
-        class Copyer
+        internal class Copyer
         {
-            public static void CopyFiles(IEnumerable<FileSystemInfo> files, string sourceDir, string targetDir)
+            internal static void CopyFiles(IEnumerable<FileSystemInfo> files, string sourceDir, string targetDir)
             {
 
                 if (!Directory.Exists(targetDir))
@@ -51,7 +51,7 @@ namespace SanityArchive
                 }
 
             }
-            static void CopyAllFilesFromDirectory(string sourceDir, string targetDir)
+            private static void CopyAllFilesFromDirectory(string sourceDir, string targetDir)
             {
                 if (Directory.Exists(sourceDir))
                 {
@@ -74,7 +74,7 @@ namespace SanityArchive
                     Console.WriteLine("It is not an existing directory");
                 }
             }
-            static void CopyFile(string file, string sourceDir, string targetDir)
+            private static void CopyFile(string file, string sourceDir, string targetDir)
             {
                 string sourceFile = Path.Combine(sourceDir, file);
                 string destFile = Path.Combine(targetDir, file);

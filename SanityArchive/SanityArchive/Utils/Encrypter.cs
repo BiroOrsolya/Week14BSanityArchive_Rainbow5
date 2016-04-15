@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace SanityArchive {
     namespace Utils
     {
-        public class Encrypter
+        internal class Encrypter
         {
 
             private const string SKey = "someshit";
@@ -19,7 +19,7 @@ namespace SanityArchive {
             };
             private static readonly ICryptoTransform Transform = DES.CreateEncryptor();
 
-            public static void Encrypt(string dirPath, IEnumerable<FileSystemInfo> files)
+            internal static void Encrypt(string dirPath, IEnumerable<FileSystemInfo> files)
             {
                 _selectedDirPath = dirPath + @"\";
                 var successMsgEnc = new StringBuilder("The selected file(s) were encrypted successfully: ");
@@ -46,7 +46,7 @@ namespace SanityArchive {
                 MessageBox.Show(successMsgEnc.ToString());
             }
 
-            public static void Decrypt(string dirPath, IEnumerable<FileSystemInfo> files)
+            internal static void Decrypt(string dirPath, IEnumerable<FileSystemInfo> files)
             {
                 _selectedDirPath = dirPath + @"\";
                 var successMsgDec = new StringBuilder("The selected file(s) were decrypted (un)successfully: ");
