@@ -34,6 +34,7 @@
 			this.decompressButton = new System.Windows.Forms.Button();
 			this.encriptButton = new System.Windows.Forms.Button();
 			this.decriptButton = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// copyButton
@@ -96,11 +97,22 @@
 			this.decriptButton.UseVisualStyleBackColor = true;
 			this.decriptButton.Click += new System.EventHandler(this.decryptButton_Click);
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(12, 426);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 10;
+			this.button1.Text = "CalcSpace";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.calcSpaceButton_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 422);
+			this.ClientSize = new System.Drawing.Size(284, 471);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.decriptButton);
 			this.Controls.Add(this.encriptButton);
 			this.Controls.Add(this.decompressButton);
@@ -117,6 +129,7 @@
 			this.Controls.SetChildIndex(this.decompressButton, 0);
 			this.Controls.SetChildIndex(this.encriptButton, 0);
 			this.Controls.SetChildIndex(this.decriptButton, 0);
+			this.Controls.SetChildIndex(this.button1, 0);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -130,5 +143,6 @@
         private System.Windows.Forms.Button decompressButton;
         private System.Windows.Forms.Button encriptButton;
         private System.Windows.Forms.Button decriptButton;
-    }
+		private System.Windows.Forms.Button button1;
+	}
 }
