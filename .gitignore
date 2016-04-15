@@ -310,3 +310,4 @@ paket-files/
 # what I've added manually cause it did not work
 /SanityArchive/SanityArchive/obj/Debug/
 /SanityArchive/SanityArchive/bin/Debug/
+*.suo
