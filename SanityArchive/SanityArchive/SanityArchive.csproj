@@ -67,9 +67,7 @@
     <Compile Include="DestinationFileDialog.Designer.cs">
       <DependentUpon>DestinationFileDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Encrypting.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Encrypting.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
