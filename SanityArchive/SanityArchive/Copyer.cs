@@ -19,22 +19,26 @@ namespace SanityArchive
             }
             else
             {
-                CopyAllFilesFromDirectory(sourceDir, targetDir);
-            }
-            foreach (var fil in files)
-            {
-                string file = fil.Name;
-                if (File.Exists(file))
-                {
-                    CopyFile(file, sourceDir, targetDir);
-                }
-                else
-                {
-                    Console.WriteLine("{0} :is not an existing file", file.ToString());
-                }
-            }
 
+                foreach (var fil in files)
+                {
+                    string file = sourceDir + Path.DirectorySeparatorChar + fil.Name;
+                    if (File.Exists(file))
+                    {
+                        CopyFile(file, sourceDir, targetDir);
+                    }
+                    else if (Directory.Exists(file))
+                    {
+                        CopyAllFilesFromDirectory(file, targetDir);
 
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0} :is not an existing file", file.ToString());
+                    }
+                }
+
+            }
 
         }
         static void CopyAllFilesFromDirectory(string sourceDir, string targetDir)
