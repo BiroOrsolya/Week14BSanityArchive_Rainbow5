@@ -48,58 +48,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalcSpace.cs" />
-    <Compile Include="Compressor.cs" />
-    <Compile Include="Copyer.cs" />
-    <Compile Include="DestinationDialog.cs">
+    <Compile Include="Utils\Calculator.cs" />
+    <Compile Include="Utils\Compressor.cs" />
+    <Compile Include="Utils\Copyer.cs" />
+    <Compile Include="Forms\DestinationDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DestinationDialog.Designer.cs">
+    <Compile Include="Forms\DestinationDialog.Designer.cs">
       <DependentUpon>DestinationDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="DestinationDirectoryDialog.cs">
+    <Compile Include="Forms\DestinationDirectoryDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DestinationDirectoryDialog.Designer.cs">
+    <Compile Include="Forms\DestinationDirectoryDialog.Designer.cs">
       <DependentUpon>DestinationDirectoryDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="DestinationFileDialog.cs">
+    <Compile Include="Forms\DestinationFileDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DestinationFileDialog.Designer.cs">
+    <Compile Include="Forms\DestinationFileDialog.Designer.cs">
       <DependentUpon>DestinationFileDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Encrypting.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Utils\Encrypter.cs" />
+    <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.Compressing.cs">
+    <Compile Include="Forms\MainForm.Compressing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.CopyMove.cs">
+    <Compile Include="Forms\MainForm.CopyMove.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.Encripting.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DestinationDialog.resx">
+    <EmbeddedResource Include="Forms\DestinationDialog.resx">
       <DependentUpon>DestinationDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DestinationFileDialog.resx">
+    <EmbeddedResource Include="Forms\DestinationFileDialog.resx">
       <DependentUpon>DestinationFileDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,6 +127,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

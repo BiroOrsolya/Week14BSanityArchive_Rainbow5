@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using SanityArchive.Forms;
+
 namespace SanityArchive
 {
     static class Program
